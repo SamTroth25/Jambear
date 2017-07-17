@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class PlatformerMotor2D : MonoBehaviour
 {
-    #region Public
+    #region
 
     /// <summary>
     /// The static environment check mask. This should only be environment that doesn't move.
@@ -1050,7 +1050,7 @@ public class PlatformerMotor2D : MonoBehaviour
     #region Private
 
     private LayerMask _collisionMask;
-
+    
     private Vector2 _restrictedAreaTR;
     private Bounds _restrictedArea;
     private Vector2 _restrictedAreaBL;
@@ -1076,6 +1076,8 @@ public class PlatformerMotor2D : MonoBehaviour
     private Vector2 _disallowedSlopeNormal;
     private Vector2 _previousMoveDir;
     private bool _isValidWallInteraction;
+
+    ShakeCamera shake;
 
     // This is the unconverted motor velocity. This ignores slopes. It is converted into the appropriate vector before
     // moving.
@@ -1117,6 +1119,10 @@ public class PlatformerMotor2D : MonoBehaviour
 
         public bool force;
         public float height;
+
+        //Audio
+        private AudioSource aS;
+        public AudioClip jumpSound;
 
         public float jumpGraceFrames;
         public bool jumpTypeChanged;
@@ -1224,6 +1230,7 @@ public class PlatformerMotor2D : MonoBehaviour
 
     private void Start()
     {
+        shake = Camera.main.GetComponent<ShakeCamera>();
         _previousLoc = _collider2D.bounds.center;
         // initial set, do not use ChangeState
         motorState = MotorState.Falling;
@@ -1884,7 +1891,7 @@ public class PlatformerMotor2D : MonoBehaviour
         }
         else if (IsOnCorner())
         {
-            _jumping.lastValidJump = JumpState.JumpType.Corner;
+            _jumping.lastValidJump = JumpState.JumpType.Corner;            
         }
 
         // We don't track air jumps as they are always valid in the air.

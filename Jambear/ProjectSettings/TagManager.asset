@@ -5,6 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Gear
+  - Arrow
+  - Coin
+  - Chandelier
+  - JumpOBJ
+  - EnemyFly
+  - Enemy
+  - EnemyShield
   layers:
   - Default
   - TransparentFX
@@ -16,10 +24,10 @@ TagManager:
   - 
   - Static Environment
   - Moving Platforms
-  - 
-  - 
-  - 
-  - 
+  - Arrow
+  - Player
+  - Enemy
+  - NoCol
   - 
   - 
   - 
@@ -41,4 +49,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: World
+    uniqueID: 910093641
+    locked: 0
+  - name: Player
+    uniqueID: 379846379
+    locked: 0
+  - name: Water
+    uniqueID: 3916310881
     locked: 0

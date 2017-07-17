@@ -12,9 +12,11 @@ public class Collision : MonoBehaviour
 
     private Rigidbody2D rb;
     private BoxCollider2D colBox;
+    WayPoints wp;
 
     void Start()
     {
+        wp = GetComponentInParent<WayPoints>();
         rb = GetComponent<Rigidbody2D>();
         colBox = GetComponent<BoxCollider2D>();
         audioS = GetComponent<AudioSource>();
@@ -26,7 +28,7 @@ public class Collision : MonoBehaviour
         {
             Instantiate(coin, col.transform.position, col.transform.rotation);
             Instantiate(deathAnim, col.transform.position, col.transform.rotation);
-            Destroy(col.gameObject);
+            col.gameObject.SetActive(false);
             audioS.pitch = Random.Range(0.9f, 1.1f);
             audioS.PlayOneShot(enemyHit);
         }      

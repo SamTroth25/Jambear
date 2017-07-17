@@ -73,7 +73,7 @@ public class ArrowMove : MonoBehaviour {
         {
             Instantiate(coin, col.transform.position, col.transform.rotation);
             Instantiate(deathAnim, col.transform.position, col.transform.rotation);
-            Destroy(col.gameObject);
+            col.gameObject.SetActive(false);
             audioS.pitch = Random.Range(0.9f, 1.1f);
             audioS.PlayOneShot(enemyHit);
         }
@@ -81,7 +81,7 @@ public class ArrowMove : MonoBehaviour {
         {
             Instantiate(coin, col.transform.position, col.transform.rotation);
             Instantiate(deathAnim, col.transform.position, col.transform.rotation);
-            Destroy(col.transform.parent.gameObject);
+            col.gameObject.SetActive(false);
             audioS.pitch = Random.Range(0.9f, 1.1f);
             audioS.PlayOneShot(enemyHit);
         }
@@ -89,7 +89,7 @@ public class ArrowMove : MonoBehaviour {
         {
             Instantiate(coin, col.transform.position, col.transform.rotation);
             Instantiate(deathAnim, col.transform.position, col.transform.rotation);
-            Destroy(col.gameObject);
+            col.gameObject.SetActive(false);
             audioS.pitch = Random.Range(0.9f, 1.1f);
             audioS.PlayOneShot(enemyHit);
         }

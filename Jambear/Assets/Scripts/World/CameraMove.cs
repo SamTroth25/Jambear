@@ -15,9 +15,12 @@ public class CameraMove : MonoBehaviour
     public GameObject timeLeftUI;
     public Text countdownText;
 
+    bool canMove;
+
     // Use this for initialization
     void Start()
     {
+        canMove = true;
         //player.canMove = false;
         transform.position = patrolPoints[0].position;
         currentPoint = 0;
@@ -32,16 +35,20 @@ public class CameraMove : MonoBehaviour
         if (timeLeft < 0)
         {
             timeLeftUI.SetActive(false);
-            if (transform.position == patrolPoints[currentPoint].position)
+            if (transform.position == patrolPoints[currentPoint].position && canMove)
             {
                 //player.canMove = true;
                 currentPoint++;
             }
             if (currentPoint >= patrolPoints.Length)
             {
-                currentPoint = 1;
+                canMove = false;
+                currentPoint = patrolPoints.Length;
             }
-            transform.position = Vector3.MoveTowards(transform.position, patrolPoints[currentPoint].position, moveSpeed * Time.deltaTime);
+            if (canMove)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, patrolPoints[currentPoint].position, moveSpeed * Time.deltaTime);
+            }
         }     
     }
 }
