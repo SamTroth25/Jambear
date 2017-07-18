@@ -67,7 +67,7 @@ public class ArrowMove : MonoBehaviour {
             BulletSpeed = 0.0f;
             arrowAnim.SetTrigger("Hit");
             audioS.pitch = Random.Range(0.9f, 1.1f);
-            audioS.PlayOneShot(shieldHit);
+            audioS.PlayOneShot(shieldHit);           
         }
         if (col.gameObject.tag == "Enemy")
         {

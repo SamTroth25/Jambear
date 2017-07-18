@@ -10,9 +10,10 @@ GameObject:
   - 4: {fileID: 497170}
   - 114: {fileID: 11420178}
   - 82: {fileID: 8271614}
-  m_Layer: 2
+  - 50: {fileID: 50000010967990006}
+  m_Layer: 0
   m_Name: Shield_Enemy
-  m_TagString: Enemy
+  m_TagString: ShieldEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,7 +27,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 452214}
   - 108: {fileID: 10861004}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +44,7 @@ GameObject:
   - 4: {fileID: 470776}
   - 61: {fileID: 6160102}
   - 114: {fileID: 11430380}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Shield
   m_TagString: EnemyShield
   m_Icon: {fileID: 0}
@@ -61,9 +62,9 @@ GameObject:
   - 212: {fileID: 21271262}
   - 95: {fileID: 9526462}
   - 61: {fileID: 6173750}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Art
-  m_TagString: Enemy
+  m_TagString: ShieldEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,7 +116,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 134056}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.09, y: 7.247, z: 0.0146484375}
+  m_LocalPosition: {x: 2.691537, y: 2.5195806, z: 0.0146484375}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -347,3 +348,20 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 134056}
   m_IsPrefabParent: 1
+--- !u!50 &50000010967990006
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 134056}
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
