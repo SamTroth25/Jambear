@@ -66,7 +66,7 @@ public class Record : MonoBehaviour
 
 	void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.Space))
+		if (Input.GetKeyDown(KeyCode.F8))
 		{
 			// Compress & save the buffered frames to a gif file. We should check the State
 			// of the Recorder before saving, but for the sake of this example we won't, so
@@ -84,7 +84,7 @@ public class Record : MonoBehaviour
 			GUILayout.BeginVertical();
 
 				GUILayout.Space(10f);
-				GUILayout.Label("Press [SPACE] to export the buffered frames to a gif file.");
+				GUILayout.Label("Press [F8] to export the buffered frames to a gif file.");
 				GUILayout.Label("Recorder State : " + m_Recorder.State.ToString());
 
 				if (m_IsSaving)
