@@ -21,6 +21,7 @@ public class ArrowMove : MonoBehaviour {
     Animator arrowAnim;
 
     public GameObject coin;
+    public GameObject gem;
 
     // Use this for initialization
     void Start() {
@@ -67,7 +68,7 @@ public class ArrowMove : MonoBehaviour {
             BulletSpeed = 0.0f;
             arrowAnim.SetTrigger("Hit");
             audioS.pitch = Random.Range(0.9f, 1.1f);
-            audioS.PlayOneShot(shieldHit);           
+            audioS.PlayOneShot(shieldHit);       
         }
         if (col.gameObject.tag == "Enemy")
         {
@@ -76,6 +77,7 @@ public class ArrowMove : MonoBehaviour {
             col.gameObject.SetActive(false);
             audioS.pitch = Random.Range(0.9f, 1.1f);
             audioS.PlayOneShot(enemyHit);
+            SpawnEXP();
         }
         if (col.gameObject.tag == "ShieldEnemy")
         {
@@ -84,6 +86,7 @@ public class ArrowMove : MonoBehaviour {
             col.gameObject.SetActive(false);
             audioS.pitch = Random.Range(0.9f, 1.1f);
             audioS.PlayOneShot(enemyHit);
+            SpawnEXP();
         }
         if (col.gameObject.tag == "EnemyFly")
         {
@@ -92,6 +95,16 @@ public class ArrowMove : MonoBehaviour {
             col.gameObject.SetActive(false);
             audioS.pitch = Random.Range(0.9f, 1.1f);
             audioS.PlayOneShot(enemyHit);
+            SpawnEXP();
+        }
+    }
+    void SpawnEXP()
+    {
+        float rand = Random.Range(5, 10);
+
+        for (int i = 0; i < rand; i++)
+        {
+            Instantiate(gem, transform.position, transform.rotation);
         }
     }
 }

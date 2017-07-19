@@ -24,7 +24,8 @@ GameObject:
   - 58: {fileID: 58000012028577610}
   - 114: {fileID: 114000013929537898}
   - 114: {fileID: 114000010928962916}
-  m_Layer: 13
+  - 58: {fileID: 58000011346135148}
+  m_Layer: 0
   m_Name: Gem
   m_TagString: Gem
   m_Icon: {fileID: 0}
@@ -55,8 +56,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010979457304}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.8206081, y: 2.5421505, z: -0.334}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -5.2759852, y: -2.4615872, z: -0.334}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4000012272396064}
@@ -92,6 +93,20 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!58 &58000011346135148
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010979457304}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.1
 --- !u!58 &58000012028577610
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -119,7 +134,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2
+  m_Radius: 1
 --- !u!108 &108000013066944358
 Light:
   m_ObjectHideFlags: 1
@@ -165,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cb11868fb5e3b943804b0fc20887f8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 10
 --- !u!114 &114000013929537898
 MonoBehaviour:
   m_ObjectHideFlags: 1

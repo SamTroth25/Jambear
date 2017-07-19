@@ -19,6 +19,7 @@ public class PlayerCollision : MonoBehaviour
     public Image HeratUI;
 
     public ScoreManager scoreMan;
+    public PlayerLevelSystem playerLvl;
 
     //Camera Shake
     public ShakeCamera shake;
@@ -40,35 +41,41 @@ public class PlayerCollision : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collisionObject)
     {
-            if (collisionObject.gameObject.tag == "Coin")
-            {
-                GetComponent<AudioSource>().pitch = Random.Range(0.95f, 1.05f);
-                GetComponent<AudioSource>().PlayOneShot(coinSound, 0.25f);
-                scoreMan.scoreNum += 5;
-                Destroy(collisionObject.transform.parent.gameObject);
-            }
-
-            if (collisionObject.gameObject.tag == "Enemy")
-            {
-                print("HurtPlayer");
-                curHealth--;
-                GetComponent<AudioSource>().pitch = Random.Range(0.9f, 1.1f);
-                GetComponent<AudioSource>().PlayOneShot(hurtSound, 0.25f);
-                shake.DoShake();
-                StartCoroutine(HurtPlayer(0.1f));
-            }
-            if (collisionObject.gameObject.tag == "Hurt")
-            {
-                print("HurtPlayer");
-                curHealth--;
-                StartCoroutine(HurtPlayer(0.1f));
-            }
+        if (collisionObject.gameObject.tag == "Coin")
+        {
+            GetComponent<AudioSource>().pitch = Random.Range(0.95f, 1.05f);
+            GetComponent<AudioSource>().PlayOneShot(coinSound, 0.25f);
+            scoreMan.scoreNum += 5;
+            Destroy(collisionObject.transform.parent.gameObject);
+        }
+        if (collisionObject.gameObject.tag == "Gem")
+        {
+            GetComponent<AudioSource>().pitch = Random.Range(0.95f, 1.05f);
+            GetComponent<AudioSource>().PlayOneShot(coinSound, 0.25f);
+            playerLvl.AddEXP(5.0f);
+            Destroy(collisionObject.gameObject);
+        }
+        if (collisionObject.gameObject.tag == "Enemy")
+        {
+            print("HurtPlayer");
+            curHealth--;
+            GetComponent<AudioSource>().pitch = Random.Range(0.9f, 1.1f);
+            GetComponent<AudioSource>().PlayOneShot(hurtSound, 0.25f);
+            shake.DoShake();
+            StartCoroutine(HurtPlayer(0.1f));
+        }
+        if (collisionObject.gameObject.tag == "Hurt")
+        {
+            print("HurtPlayer");
+            curHealth--;
+            StartCoroutine(HurtPlayer(0.1f));
+        }
         if (collisionObject.gameObject.tag == "Gear")
         {
             print("KillPlayer");
             //reloadLevel
             //curHealth -= KillDamage;
-        }      
+        }
     }
     IEnumerator HurtPlayer(float WaitTime)
     {

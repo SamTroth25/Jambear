@@ -4,9 +4,9 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour {
 
+    //level score
     public int scoreNum;
     public Text scoretext;
-    
 
 	// Use this for initialization
 	void Start () {
