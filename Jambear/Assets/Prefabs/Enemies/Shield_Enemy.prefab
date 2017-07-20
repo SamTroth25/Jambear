@@ -62,7 +62,7 @@ GameObject:
   - 212: {fileID: 21271262}
   - 95: {fileID: 9526462}
   - 61: {fileID: 6173750}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Art
   m_TagString: ShieldEnemy
   m_Icon: {fileID: 0}

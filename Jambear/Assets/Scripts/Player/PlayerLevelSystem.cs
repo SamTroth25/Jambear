@@ -14,8 +14,10 @@ public class PlayerLevelSystem : MonoBehaviour
       
     void Start()
     {
+        currentEXP = PlayerPrefs.GetFloat("CurrentEXP");
         currentLevel = PlayerPrefs.GetInt("CurrentLevel");
         levelUI.text = ("" + currentLevel);
+        levelUpBarUI.fillAmount = currentEXP / toLevelUp[currentLevel];
     }
     void Update()
     {
@@ -31,5 +33,6 @@ public class PlayerLevelSystem : MonoBehaviour
     {
         currentEXP += exp;
         levelUpBarUI.fillAmount = currentEXP / toLevelUp[currentLevel];
+        PlayerPrefs.SetFloat("CurrentEXP", currentEXP);
     }
 }
