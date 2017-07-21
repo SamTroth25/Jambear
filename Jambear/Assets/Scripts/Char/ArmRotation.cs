@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class ArmRotation : MonoBehaviour {
 
@@ -15,8 +16,14 @@ public class ArmRotation : MonoBehaviour {
     public int sizeX = 16;
     public int sizeY = 16;
 
+    public float octoAimThreshold = 22.5f;
+
     private bool mouseDown;
 
+    public Animator headAnim;
+
+    public Text armRotText;
+  
     void Start()
     {
         Cursor.visible = false;
@@ -37,8 +44,8 @@ public class ArmRotation : MonoBehaviour {
             //audioSource.PlayOneShot (click, 0.7f);
         }
 
-        var xMou = Input.GetAxis("Mouse X");
-        var yMou = Input.GetAxis("Mouse Y");
+        float xMou = Input.GetAxisRaw("Mouse X");
+        float yMou = Input.GetAxisRaw("Mouse Y");
 
         if (xMou != 0.0 || yMou != 0.0)
         {
@@ -48,14 +55,56 @@ public class ArmRotation : MonoBehaviour {
         }
 
         if (!controllerOn)
-        {            
-        // subtracting the position of the player from the mouse position
-        Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        difference.Normalize();     // normalizing the vector. Meaning that all the sum of the vector will be equal to 1
+        {
+            // subtracting the position of the player from the mouse position
+            Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+            difference.Normalize();     // normalizing the vector. Meaning that all the sum of the vector will be equal to 1
 
-        float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;   // find the angle in degrees
-        transform.rotation = Quaternion.Euler(0f, 0f, rotZ + rotationOffset);
-    }
+            float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;   // find the angle in degrees
+
+            if (rotZ > 60 && rotZ < 120)
+            {
+                rotZ = 90;
+            }
+            if (rotZ > 30 && rotZ < 60)
+            {
+                rotZ = 45;
+            }
+            if (rotZ > 120 && rotZ < 150)
+            {
+                rotZ = 135;
+            }
+            if (rotZ > 150)
+            {
+                rotZ = 180;
+            }
+            if (rotZ < 30 && rotZ > -30)
+            {
+                rotZ = 0;
+            }
+            if (rotZ < -30 && rotZ > -60)
+            {
+                rotZ = -45;
+            }
+            if (rotZ < -60 && rotZ > -120)
+            {
+                rotZ = -90;
+            }
+            if (rotZ < -120 && rotZ > -150)
+            {
+                rotZ = -135;
+            }
+            if (rotZ < -150)
+            {
+                rotZ = 180;
+            }
+
+            transform.rotation = Quaternion.Euler(0f, 0f, rotZ + rotationOffset);
+            armRotText.text = ("Arm Angle Mou: " + rotZ);
+
+            headAnim.SetFloat("MouseX", -difference.y);
+            headAnim.SetFloat("MouseY", -difference.x);
+        }
 
         //Controller Support for Aim.
         var xCon = Input.GetAxis("RHor");
@@ -67,7 +116,48 @@ public class ArmRotation : MonoBehaviour {
             sizeY = 0;
             controllerOn = true;
             var angle = Mathf.Atan2(xCon, yCon) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.AngleAxis(180.0f + angle, Vector3.forward);
+
+            if (angle > 60 && angle < 120)
+            {
+                angle = 90;
+            }
+            if (angle > 30 && angle < 60)
+            {
+                angle = 45;
+            }
+            if (angle > 120 && angle < 150)
+            {
+                angle = 135;
+            }
+            if(angle > 150)
+            {
+                angle = 180;
+            }
+            if (angle < 30 && angle > -30)
+            {
+                angle = 0;
+            }
+            if (angle < -30 && angle > -60)
+            {
+                angle = -45;
+            }
+            if (angle < -60 && angle > -120)
+            {
+                angle = -90;
+            }
+            if (angle < -120 && angle > -150)
+            {
+                angle = -135;
+            }
+            if(angle < -150)
+            {
+                angle = 180;
+            }
+
+            armRotText.text = ("Arm Angle Con: " + angle);
+            transform.rotation = Quaternion.Euler(0f, 0f, angle + 180.0f);
+            headAnim.SetFloat("MouseX", xCon);
+            headAnim.SetFloat("MouseY", yCon);
         }
     }
     void OnGUI()

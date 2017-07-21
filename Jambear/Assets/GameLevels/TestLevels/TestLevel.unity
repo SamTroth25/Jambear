@@ -44510,6 +44510,19 @@ Prefab:
       propertyPath: dashSound
       value: 
       objectReference: {fileID: 8300000, guid: 00c03287e901ce94abe2e2200d225764, type: 3}
+    - target: {fileID: 11400002, guid: f53f0e5cd92ba5148aace93d59b06aaf, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000011494321814, guid: f53f0e5cd92ba5148aace93d59b06aaf, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212000011117782518, guid: f53f0e5cd92ba5148aace93d59b06aaf,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f53f0e5cd92ba5148aace93d59b06aaf, type: 2}
   m_IsPrefabParent: 0

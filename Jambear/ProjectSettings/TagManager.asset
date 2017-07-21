@@ -15,6 +15,7 @@ TagManager:
   - EnemyShield
   - Gem
   - ShieldEnemy
+  - EnemyAttract
   layers:
   - Default
   - TransparentFX
@@ -60,4 +61,7 @@ TagManager:
     locked: 0
   - name: Water
     uniqueID: 3916310881
+    locked: 0
+  - name: 3D Elements
+    uniqueID: 2209614871
     locked: 0

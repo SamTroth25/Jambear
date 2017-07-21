@@ -29,7 +29,6 @@ GameObject:
   - 95: {fileID: 9581590}
   - 96: {fileID: 9696450}
   - 114: {fileID: 11439826}
-  - 61: {fileID: 6105408}
   - 82: {fileID: 8211686}
   - 58: {fileID: 5866322}
   m_Layer: 10
@@ -88,7 +87,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 151142}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.24, y: 4.78, z: 0}
+  m_LocalPosition: {x: 6.0530086, y: 1.0481637, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -141,20 +140,6 @@ CircleCollider2D:
   m_Offset: {x: 0.12, y: 0.01}
   serializedVersion: 2
   m_Radius: 0.05
---- !u!61 &6105408
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 151142}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0.01}
-  serializedVersion: 2
-  m_Size: {x: 0.29, y: 0.05}
 --- !u!82 &8211686
 AudioSource:
   m_ObjectHideFlags: 1
