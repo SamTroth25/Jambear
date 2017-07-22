@@ -16,6 +16,7 @@ TagManager:
   - Gem
   - ShieldEnemy
   - EnemyAttract
+  - Aim
   layers:
   - Default
   - TransparentFX
@@ -31,7 +32,7 @@ TagManager:
   - Player
   - Enemy
   - NoCol
-  - 
+  - Aim
   - 
   - 
   - 

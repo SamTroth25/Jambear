@@ -13,6 +13,8 @@ public class ArmRotation : MonoBehaviour {
     public Texture2D yourCursor;
     public Texture2D clickCursor;
 
+    public GameObject controllerCrosshair;
+
     public int sizeX = 16;
     public int sizeY = 16;
 
@@ -52,6 +54,7 @@ public class ArmRotation : MonoBehaviour {
             controllerOn = false;
             sizeX = 64;
             sizeY = 64;
+            controllerCrosshair.SetActive(false);
         }
 
         if (!controllerOn)
@@ -115,6 +118,7 @@ public class ArmRotation : MonoBehaviour {
             sizeX = 0;
             sizeY = 0;
             controllerOn = true;
+            controllerCrosshair.SetActive(true);
             var angle = Mathf.Atan2(xCon, yCon) * Mathf.Rad2Deg;
 
             if (angle > 60 && angle < 120)

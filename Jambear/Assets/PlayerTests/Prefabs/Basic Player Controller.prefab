@@ -624,6 +624,7 @@ MonoBehaviour:
   mouse: {x: 0, y: 0}
   yourCursor: {fileID: 2800000, guid: ab57deb98e7bb93469f8b429ba4c7404, type: 3}
   clickCursor: {fileID: 2800000, guid: e2da6cce34503c84ea6f30cb7f43be79, type: 3}
+  controllerCrosshair: {fileID: 0}
   sizeX: 64
   sizeY: 64
   octoAimThreshold: 22.5

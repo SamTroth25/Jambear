@@ -45,7 +45,7 @@ public class PlayerCollision : MonoBehaviour
         {
             GetComponent<AudioSource>().pitch = Random.Range(0.95f, 1.05f);
             GetComponent<AudioSource>().PlayOneShot(coinSound, 0.25f);
-            scoreMan.scoreNum += 5;
+            scoreMan.AddCoin();
             Destroy(collisionObject.transform.parent.gameObject);
         }
         if (collisionObject.gameObject.tag == "Gem")
