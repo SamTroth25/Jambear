@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MovingEnemy : MonoBehaviour {
+public class MovingEnemy : MonoBehaviour
+{
 
 	public Transform enemy;
     public SpriteRenderer enemySprite;
@@ -16,16 +17,19 @@ public class MovingEnemy : MonoBehaviour {
 
 	public Animator ghostAnim;
 
-	void Start (){
-
-	}
+	void Start ()
+    {
+        enemySprite.color = new Color(1f, 1f, 1f, 0.25f);
+    }
 
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.gameObject != null) {
 			if (other.gameObject.tag == "Player") {
 				inCol = true;
-				//player = other.gameObject.name;
-			}
+                //player = other.gameObject.name;
+                enemySprite.color = new Color(1f,1f,1f,1f);
+
+            }
 		}
 	}
 
@@ -33,7 +37,8 @@ public class MovingEnemy : MonoBehaviour {
 		if (other.gameObject != null) {
 			if (other.gameObject.tag == "Player") {
 				inCol = false;
-			}
+                enemySprite.color = new Color(1f, 1f, 1f, 0.25f);
+            }
 		}
 	}
 

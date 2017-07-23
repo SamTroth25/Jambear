@@ -15,7 +15,7 @@ public class AttractToPlayer : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         float step = speed * Time.deltaTime;
         if (inCol)

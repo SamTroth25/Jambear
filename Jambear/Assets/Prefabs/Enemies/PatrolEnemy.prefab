@@ -28,7 +28,7 @@ GameObject:
   - 95: {fileID: 9549428}
   m_Layer: 0
   m_Name: PatrolEnemyArt
-  m_TagString: Enemy
+  m_TagString: EnemyAttract
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,7 +45,9 @@ GameObject:
   - 82: {fileID: 8242720}
   - 58: {fileID: 58000011523787266}
   - 50: {fileID: 50000010114508448}
-  m_Layer: 0
+  - 114: {fileID: 114000011671791154}
+  - 114: {fileID: 114000010173531060}
+  m_Layer: 12
   m_Name: PatrolEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -85,7 +87,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 197182}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3, y: 2.15, z: 0}
+  m_LocalPosition: {x: -3, y: 3.15, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -247,7 +249,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b83e5f5eb8c67548ba07d10b2279f15, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -309,3 +311,34 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.15
+--- !u!114 &114000010173531060
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 197182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11005b82ace3e5041bcb1d68ff09e610, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
+  spriteRenderer: {fileID: 21287112}
+--- !u!114 &114000011671791154
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 197182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25d0be725ce1afd40910bb1e40427920, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curHealth: 3
+  maxHealth: 3
+  enemyArt: {fileID: 21287112}
+  coin: {fileID: 120750, guid: d0f8e02ba3f052e4d888fc8f266d6850, type: 2}
+  gem: {fileID: 1000010979457304, guid: 687b06ae0802bac4dbafe50396e4aee1, type: 2}
+  XPMin: 5
+  XpMax: 10

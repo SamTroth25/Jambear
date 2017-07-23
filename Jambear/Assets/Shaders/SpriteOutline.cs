@@ -6,11 +6,11 @@ public class SpriteOutline : MonoBehaviour
 {
     public Color color = Color.white;
 
-    private SpriteRenderer spriteRenderer;
+    public  SpriteRenderer spriteRenderer;
 
     void OnEnable()
     {
-        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+
     }
 
     public void EnableOutline()
@@ -39,8 +39,11 @@ public class SpriteOutline : MonoBehaviour
             EnableOutline();
         }
     }
-    void OnTriggerExit2D()
+    void OnTriggerExit2D(Collider2D col)
     {
-        DisableOutline();
+        if (col.gameObject.tag == "Aim")
+        {
+            DisableOutline();
+        }
     }
 }

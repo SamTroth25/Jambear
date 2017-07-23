@@ -10,7 +10,6 @@ public class ArrowMove : MonoBehaviour {
 
     AudioSource audioS;
     public AudioClip arrowHit;
-    public AudioClip shieldHit;
     public AudioClip enemyHit;
 
     public GameObject deathAnim;
@@ -19,9 +18,6 @@ public class ArrowMove : MonoBehaviour {
 
     public float lifetime = 0.3f;
     Animator arrowAnim;
-
-    public GameObject coin;
-    public GameObject gem;
 
     // Use this for initialization
     void Start() {
@@ -46,6 +42,7 @@ public class ArrowMove : MonoBehaviour {
             audioS.pitch = Random.Range(0.9f, 1.1f);
             audioS.PlayOneShot(arrowHit);
             Destroy(gameObject, lifetime);
+            Debug.Log("HitWall");
         }
         if (col.gameObject.tag == "Ground")
         {
@@ -54,57 +51,12 @@ public class ArrowMove : MonoBehaviour {
             audioS.pitch = Random.Range(0.9f, 1.1f);
             audioS.PlayOneShot(arrowHit);
             Destroy(gameObject, lifetime);
+            Debug.Log("HitGround");
         }
-        if (col.gameObject.tag == "JumpOBJ")
+        if(col.gameObject.tag == "Enemy")
         {
-            BulletSpeed = 0.0f;
-            arrowAnim.SetTrigger("Hit");
-            audioS.pitch = Random.Range(0.9f, 1.1f);
-            audioS.PlayOneShot(arrowHit);
-            Destroy(gameObject, lifetime);
-        }
-        if (col.gameObject.tag == "EnemyShield")
-        {           
-            BulletSpeed = 0.0f;
-            arrowAnim.SetTrigger("Hit");
-            audioS.pitch = Random.Range(0.9f, 1.1f);
-            audioS.PlayOneShot(shieldHit);       
-        }
-        if (col.gameObject.tag == "Enemy")
-        {
-            Instantiate(coin, col.transform.position, col.transform.rotation);
-            Instantiate(deathAnim, col.transform.position, col.transform.rotation);
-            col.gameObject.SetActive(false);
             audioS.pitch = Random.Range(0.9f, 1.1f);
             audioS.PlayOneShot(enemyHit);
-            SpawnEXP();
-        }
-        if (col.gameObject.tag == "ShieldEnemy")
-        {
-            Instantiate(coin, col.transform.position, col.transform.rotation);
-            Instantiate(deathAnim, col.transform.position, col.transform.rotation);
-            col.gameObject.SetActive(false);
-            audioS.pitch = Random.Range(0.9f, 1.1f);
-            audioS.PlayOneShot(enemyHit);
-            SpawnEXP();
-        }
-        if (col.gameObject.tag == "EnemyFly")
-        {
-            Instantiate(coin, col.transform.position, col.transform.rotation);
-            Instantiate(deathAnim, col.transform.position, col.transform.rotation);
-            col.gameObject.SetActive(false);
-            audioS.pitch = Random.Range(0.9f, 1.1f);
-            audioS.PlayOneShot(enemyHit);
-            SpawnEXP();
-        }
-    }
-    void SpawnEXP()
-    {
-        float rand = Random.Range(5, 10);
-
-        for (int i = 0; i < rand; i++)
-        {
-            Instantiate(gem, transform.position, transform.rotation);
         }
     }
 }

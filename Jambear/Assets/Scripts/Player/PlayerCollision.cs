@@ -24,6 +24,8 @@ public class PlayerCollision : MonoBehaviour
     //Camera Shake
     public ShakeCamera shake;
 
+    public GlitchEffect glitch;
+
     // Use this for initialization
     void Start ()
     {
@@ -62,13 +64,13 @@ public class PlayerCollision : MonoBehaviour
             GetComponent<AudioSource>().pitch = Random.Range(0.9f, 1.1f);
             GetComponent<AudioSource>().PlayOneShot(hurtSound, 0.25f);
             shake.DoShake();
-            StartCoroutine(HurtPlayer(0.1f));
+            StartCoroutine(HurtPlayer(0.2f));
         }
         if (collisionObject.gameObject.tag == "Hurt")
         {
             print("HurtPlayer");
             curHealth--;
-            StartCoroutine(HurtPlayer(0.1f));
+            StartCoroutine(HurtPlayer(0.2f));
         }
         if (collisionObject.gameObject.tag == "Gear")
         {
@@ -81,8 +83,12 @@ public class PlayerCollision : MonoBehaviour
     {
         playerArt.color = Color.red;
         playerArm.color = Color.red;
+        glitch.intensity = 1f;
+        glitch.colorIntensity = 1f;
         yield return new WaitForSeconds(WaitTime);
         playerArt.color = Color.white;
         playerArm.color = Color.white;
+        glitch.intensity = 0f;
+        glitch.colorIntensity = 0f;
     }
 }

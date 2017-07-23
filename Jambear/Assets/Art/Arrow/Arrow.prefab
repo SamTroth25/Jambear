@@ -30,7 +30,6 @@ GameObject:
   - 96: {fileID: 9696450}
   - 114: {fileID: 11439826}
   - 82: {fileID: 8211686}
-  - 58: {fileID: 5866322}
   m_Layer: 10
   m_Name: Arrow
   m_TagString: Arrow
@@ -112,20 +111,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &5866322
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 151142}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0.12, y: 0.01}
-  serializedVersion: 2
-  m_Radius: 0.05
 --- !u!58 &5882100
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -326,16 +311,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb16c7dabd007674087de1b95f7a9576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletSpeed: 10
+  BulletSpeed: 12
   rb: {fileID: 0}
   arrowHit: {fileID: 8300000, guid: 1919d975fdffc83469566ff4e6a29d3f, type: 3}
-  shieldHit: {fileID: 8300000, guid: 113f565375fb3f74d824ba28c45c91ea, type: 3}
-  enemyHit: {fileID: 8300000, guid: a759340734065cd4c9070b8fa1a1ff48, type: 3}
+  enemyHit: {fileID: 8300000, guid: 5ab58990701429b4681f1189a81ed537, type: 3}
   deathAnim: {fileID: 185432, guid: cfc36d0c58b2fa64e8458cba5d60fa2b, type: 2}
   interval: 10
   lifetime: 0.5
-  coin: {fileID: 120750, guid: d0f8e02ba3f052e4d888fc8f266d6850, type: 2}
-  gem: {fileID: 1000010979457304, guid: 687b06ae0802bac4dbafe50396e4aee1, type: 2}
 --- !u!212 &21241058
 SpriteRenderer:
   m_ObjectHideFlags: 1
