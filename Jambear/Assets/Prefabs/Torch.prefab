@@ -201,7 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99ceb027486dca748a7ce6a031003db6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinLightIntensity: 5
+  MinLightIntensity: 4
   MaxLightIntensity: 8
   AccelerateTime: 0.15
 --- !u!114 &11453186

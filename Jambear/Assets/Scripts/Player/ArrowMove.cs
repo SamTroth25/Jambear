@@ -19,6 +19,8 @@ public class ArrowMove : MonoBehaviour {
     public float lifetime = 0.3f;
     Animator arrowAnim;
 
+    public bool reversed;
+
     // Use this for initialization
     void Start() {
         rb = GetComponent<Rigidbody2D>();

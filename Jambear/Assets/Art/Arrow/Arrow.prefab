@@ -30,6 +30,7 @@ GameObject:
   - 96: {fileID: 9696450}
   - 114: {fileID: 11439826}
   - 82: {fileID: 8211686}
+  - 114: {fileID: 114000011978554506}
   m_Layer: 10
   m_Name: Arrow
   m_TagString: Arrow
@@ -60,7 +61,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 145644}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.0125, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -245,7 +246,7 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Time: 0.25
+  m_Time: 0.1
   m_StartWidth: 0.05
   m_EndWidth: 0
   m_Colors:
@@ -346,7 +347,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 379846379
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 9d945f6cc2b722547a68198b44a82039, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -362,3 +363,16 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 151142}
   m_IsPrefabParent: 1
+--- !u!114 &114000011978554506
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 151142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a048edf4414d334cbab4e48cb63adff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerName: Player
+  sortOrder: 0
