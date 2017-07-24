@@ -10179,37 +10179,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 10835462, guid: 7c23743310d3f0047ac1232f9f7a421b, type: 2}
-      propertyPath: m_Range
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 10870102, guid: 7c23743310d3f0047ac1232f9f7a421b, type: 2}
-      propertyPath: m_Range
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 193050, guid: 7c23743310d3f0047ac1232f9f7a421b, type: 2}
       propertyPath: m_Name
       value: Torch (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 21211680, guid: 7c23743310d3f0047ac1232f9f7a421b, type: 2}
-      propertyPath: m_SortingLayerID
-      value: 910093641
-      objectReference: {fileID: 0}
-    - target: {fileID: 194572, guid: 7c23743310d3f0047ac1232f9f7a421b, type: 2}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 188574, guid: 7c23743310d3f0047ac1232f9f7a421b, type: 2}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 157018, guid: 7c23743310d3f0047ac1232f9f7a421b, type: 2}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 193050, guid: 7c23743310d3f0047ac1232f9f7a421b, type: 2}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7c23743310d3f0047ac1232f9f7a421b, type: 2}
