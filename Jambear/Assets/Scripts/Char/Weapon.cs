@@ -29,15 +29,18 @@ public class Weapon : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		if (fireRate == 0) {
+	void Update () 
+    {
+        if (fireRate == 0) {
+
+
 			if (Input.GetButtonUp ("Fire1")) {
 				Shoot();
                 shake.DoShake();
             }
 		}
 		else {
-			if (Input.GetButton ("Fire1") && Time.time > timeToFire) {
+			if (Input.GetButtonUp ("Fire1") && Time.time > timeToFire) {
 				timeToFire = Time.time + 1/fireRate;
                 Shoot();
                 shake.DoShake();

@@ -17,6 +17,7 @@ TagManager:
   - ShieldEnemy
   - EnemyAttract
   - Aim
+  - Portal
   layers:
   - Default
   - TransparentFX
@@ -33,10 +34,10 @@ TagManager:
   - Enemy
   - NoCol
   - Aim
-  - 
-  - 
-  - 
-  - 
+  - EnemyCol
+  - Chand
+  - Links
+  - Portal
   - 
   - 
   - 
