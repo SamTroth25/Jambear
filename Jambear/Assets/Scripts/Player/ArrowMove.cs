@@ -59,6 +59,13 @@ public class ArrowMove : MonoBehaviour {
         {
             audioS.pitch = Random.Range(0.9f, 1.1f);
             audioS.PlayOneShot(enemyHit);
+            Destroy(gameObject);
+        }
+        if (col.gameObject.tag == "Target")
+        {
+            audioS.pitch = Random.Range(0.9f, 1.1f);
+            audioS.PlayOneShot(enemyHit);
+            col.GetComponent<Animator>().SetTrigger("Hit");            
         }
     }
 }

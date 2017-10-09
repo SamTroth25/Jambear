@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerCollision : MonoBehaviour
 {
@@ -36,9 +37,9 @@ public class PlayerCollision : MonoBehaviour
 	void Update ()
     {
         HeratUI.sprite = heartSprites[curHealth];
-        if (curHealth == 0)
+        if (curHealth <= 0)
         {
-            //reload level.
+            ReloadLevel();
         }
     }
     void OnTriggerEnter2D(Collider2D collisionObject)
@@ -66,18 +67,33 @@ public class PlayerCollision : MonoBehaviour
             shake.DoShake();
             StartCoroutine(HurtPlayer(0.2f));
         }
-        if (collisionObject.gameObject.tag == "Hurt")
+        if (collisionObject.gameObject.tag == "EnemyArrow")
         {
             print("HurtPlayer");
             curHealth--;
+            GetComponent<AudioSource>().pitch = Random.Range(0.9f, 1.1f);
+            GetComponent<AudioSource>().PlayOneShot(hurtSound, 0.25f);
+            shake.DoShake();
+            StartCoroutine(HurtPlayer(0.2f));
+        }
+        if (collisionObject.gameObject.tag == "Hurt")
+        {
+            GetComponent<AudioSource>().pitch = Random.Range(0.9f, 1.1f);
+            GetComponent<AudioSource>().PlayOneShot(hurtSound, 0.25f);
+            print("HurtPlayer");
+            curHealth--;
+            shake.DoShake();
             StartCoroutine(HurtPlayer(0.2f));
         }
         if (collisionObject.gameObject.tag == "Gear")
         {
             print("KillPlayer");
-            //reloadLevel
-            //curHealth -= KillDamage;
+            ReloadLevel();
         }
+    }
+    void ReloadLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     IEnumerator HurtPlayer(float WaitTime)
     {

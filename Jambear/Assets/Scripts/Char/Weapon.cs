@@ -34,13 +34,13 @@ public class Weapon : MonoBehaviour {
         if (fireRate == 0) {
 
 
-			if (Input.GetButtonUp ("Fire1")) {
+			if (Input.GetButton ("Fire1")) {
 				Shoot();
                 shake.DoShake();
             }
 		}
 		else {
-			if (Input.GetButtonUp ("Fire1") && Time.time > timeToFire) {
+			if (Input.GetButton ("Fire1") && Time.time > timeToFire) {
 				timeToFire = Time.time + 1/fireRate;
                 Shoot();
                 shake.DoShake();

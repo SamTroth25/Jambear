@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class CameraMove : MonoBehaviour
 {
     public Transform[] patrolPoints;
-    public float moveSpeed;
+    public float moveSpeed, totalMoveSpeed;
     private int currentPoint;
 
     private bool FacingRight;
@@ -45,10 +45,19 @@ public class CameraMove : MonoBehaviour
                 canMove = false;
                 currentPoint = patrolPoints.Length;
             }
-            if (canMove)
-            {
-                transform.position = Vector3.MoveTowards(transform.position, patrolPoints[currentPoint].position, moveSpeed * Time.deltaTime);
-            }
-        }     
+        }
+        if (canMove)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, patrolPoints[currentPoint].position, moveSpeed * Time.deltaTime);
+        }
+        else
+        {
+            moveSpeed = 0;
+        }
+    }
+    public void StartMovement()
+    {
+        canMove = true;
+        moveSpeed = totalMoveSpeed;
     }
 }

@@ -18,6 +18,9 @@ TagManager:
   - EnemyAttract
   - Aim
   - Portal
+  - Target
+  - Hurt
+  - EnemyArrow
   layers:
   - Default
   - TransparentFX
@@ -38,7 +41,7 @@ TagManager:
   - Chand
   - Links
   - Portal
-  - 
+  - Trigger
   - 
   - 
   - 
@@ -66,4 +69,7 @@ TagManager:
     locked: 0
   - name: 3D Elements
     uniqueID: 2209614871
+    locked: 0
+  - name: UI
+    uniqueID: 3923147729
     locked: 0

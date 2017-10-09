@@ -30,12 +30,10 @@ public class SpriteOutline : MonoBehaviour
         mpb.SetColor("_OutlineColor", color);
         spriteRenderer.SetPropertyBlock(mpb);
     }
-
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag == "Aim")
         {
-            Debug.Log("in");
             EnableOutline();
         }
     }
