@@ -371,10 +371,16 @@ MonoBehaviour:
   curHealth: 2
   maxHealth: 2
   enemyArt: {fileID: 21240746}
-  coin: {fileID: 120750, guid: d0f8e02ba3f052e4d888fc8f266d6850, type: 2}
+  Drops:
+  - {fileID: 120750, guid: d0f8e02ba3f052e4d888fc8f266d6850, type: 2}
+  - {fileID: 120750, guid: d0f8e02ba3f052e4d888fc8f266d6850, type: 2}
+  - {fileID: 120750, guid: d0f8e02ba3f052e4d888fc8f266d6850, type: 2}
+  - {fileID: 1000013929520082, guid: 2c06b15b6bf36604aac42f4f60b1952b, type: 2}
   gem: {fileID: 1000010979457304, guid: 687b06ae0802bac4dbafe50396e4aee1, type: 2}
   XPMin: 2
   XpMax: 5
+  S_wp: {fileID: 0}
+  useWP: 0
 --- !u!114 &114000012575192920
 MonoBehaviour:
   m_ObjectHideFlags: 1

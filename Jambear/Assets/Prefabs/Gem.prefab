@@ -117,7 +117,7 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010979457304}
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 2
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0.2
@@ -288,8 +288,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d4ddef1b288fdc4c9a5b018bcd59654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 1
-  power: 100
+  radius: 2
+  power: 50
 --- !u!198 &198000013619862952
 ParticleSystem:
   m_ObjectHideFlags: 1

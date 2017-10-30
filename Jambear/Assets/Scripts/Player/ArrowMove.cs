@@ -17,6 +17,7 @@ public class ArrowMove : MonoBehaviour {
     public float interval;
 
     public float lifetime = 0.3f;
+    public float lifetimeEnemy = 0.1f;
     Animator arrowAnim;
 
     public bool reversed;
@@ -59,7 +60,7 @@ public class ArrowMove : MonoBehaviour {
         {
             audioS.pitch = Random.Range(0.9f, 1.1f);
             audioS.PlayOneShot(enemyHit);
-            Destroy(gameObject);
+            Destroy(gameObject, lifetimeEnemy);
         }
         if (col.gameObject.tag == "Target")
         {

@@ -34,27 +34,16 @@ public class CameraMove : MonoBehaviour
         timeLeft -= Time.deltaTime;
         if (timeLeft < 0)
         {
+            timeLeft = 0;
             timeLeftUI.SetActive(false);
-            if (transform.position == patrolPoints[currentPoint].position && canMove)
+            if (canMove)
             {
-                //player.canMove = true;
-                currentPoint++;
+                float step = moveSpeed * Time.deltaTime;
+                transform.position = Vector3.MoveTowards(transform.position, patrolPoints[1].position, step);
             }
-            if (currentPoint >= patrolPoints.Length)
-            {
-                canMove = false;
-                currentPoint = patrolPoints.Length;
-            }
-        }
-        if (canMove)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, patrolPoints[currentPoint].position, moveSpeed * Time.deltaTime);
-        }
-        else
-        {
-            moveSpeed = 0;
         }
     }
+
     public void StartMovement()
     {
         canMove = true;

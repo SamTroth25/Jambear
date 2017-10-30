@@ -35,12 +35,12 @@ public class PlayerCollision : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update ()
-    {
-        HeratUI.sprite = heartSprites[curHealth];
+    {       
         if (curHealth <= 0)
         {
             ReloadLevel();
         }
+        HeratUI.sprite = heartSprites[curHealth];
     }
     void OnTriggerEnter2D(Collider2D collisionObject)
     {
@@ -50,6 +50,16 @@ public class PlayerCollision : MonoBehaviour
             GetComponent<AudioSource>().PlayOneShot(coinSound, 0.25f);
             scoreMan.AddCoin();
             Destroy(collisionObject.transform.parent.gameObject);
+        }
+        if (collisionObject.gameObject.tag == "Health")
+        {
+            //GetComponent<AudioSource>().pitch = Random.Range(0.95f, 1.05f);
+            //GetComponent<AudioSource>().PlayOneShot(coinSound, 0.25f);
+            if (curHealth != maxHealth)
+            {
+                curHealth++;
+                Destroy(collisionObject.transform.parent.gameObject);
+            }            
         }
         if (collisionObject.gameObject.tag == "Gem")
         {

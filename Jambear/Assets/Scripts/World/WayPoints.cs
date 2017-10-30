@@ -31,11 +31,6 @@ public class WayPoints : MonoBehaviour {
 		}
 
 		transform.position = Vector3.MoveTowards (transform.position, patrolPoints [currentPoint].position, moveSpeed * Time.deltaTime);
-        if(!art.gameObject.active)
-        {
-            moveSpeed = 0;
-            GetComponent<AudioSource>().volume = 0.15f;
-        }
 	}
 	void Flip(){
 		FacingRight = !FacingRight;
@@ -44,4 +39,9 @@ public class WayPoints : MonoBehaviour {
 		theScale.x *= -1;
         art.transform.localScale = theScale;
 	}
+    public void Death()
+    {
+        moveSpeed = 0;
+        GetComponent<AudioSource>().volume = 0.15f;
+    }
 }

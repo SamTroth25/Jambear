@@ -11,7 +11,6 @@ GameObject:
   - 114: {fileID: 11420178}
   - 82: {fileID: 8271614}
   - 50: {fileID: 50000010967990006}
-  - 114: {fileID: 114000013781979426}
   m_Layer: 0
   m_Name: Shield_Enemy
   m_TagString: Enemy
@@ -111,6 +110,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 470776}
+  - {fileID: 4000012593326688}
   m_Father: {fileID: 497170}
   m_RootOrder: 1
 --- !u!4 &497170
@@ -126,7 +126,6 @@ Transform:
   m_Children:
   - {fileID: 452214}
   - {fileID: 492700}
-  - {fileID: 4000012593326688}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!61 &6160102
@@ -168,7 +167,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 38197aa5f65359c48b10e4b2775b7a21, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -356,13 +355,14 @@ Prefab:
   m_IsPrefabParent: 1
 --- !u!1 &1000013685727308
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012593326688}
   - 58: {fileID: 58000013240096726}
+  - 114: {fileID: 114000013345278312}
   m_Layer: 14
   m_Name: Target
   m_TagString: Aim
@@ -381,8 +381,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
-  m_Father: {fileID: 497170}
-  m_RootOrder: 2
+  m_Father: {fileID: 492700}
+  m_RootOrder: 1
 --- !u!50 &50000010967990006
 Rigidbody2D:
   serializedVersion: 2
@@ -502,10 +502,18 @@ MonoBehaviour:
   curHealth: 5
   maxHealth: 5
   enemyArt: {fileID: 21271262}
-  coin: {fileID: 120750, guid: d0f8e02ba3f052e4d888fc8f266d6850, type: 2}
+  Drops:
+  - {fileID: 120750, guid: d0f8e02ba3f052e4d888fc8f266d6850, type: 2}
+  - {fileID: 120750, guid: d0f8e02ba3f052e4d888fc8f266d6850, type: 2}
+  - {fileID: 120750, guid: d0f8e02ba3f052e4d888fc8f266d6850, type: 2}
+  - {fileID: 120750, guid: d0f8e02ba3f052e4d888fc8f266d6850, type: 2}
+  - {fileID: 120750, guid: d0f8e02ba3f052e4d888fc8f266d6850, type: 2}
+  - {fileID: 1000013929520082, guid: 2c06b15b6bf36604aac42f4f60b1952b, type: 2}
   gem: {fileID: 1000010979457304, guid: 687b06ae0802bac4dbafe50396e4aee1, type: 2}
   XPMin: 8
   XpMax: 14
+  S_wp: {fileID: 11420178}
+  useWP: 1
 --- !u!114 &114000012534123462
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -519,12 +527,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color: {r: 1, g: 1, b: 1, a: 1}
   spriteRenderer: {fileID: 21271262}
---- !u!114 &114000013781979426
+--- !u!114 &114000013345278312
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 134056}
+  m_GameObject: {fileID: 1000013685727308}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 11005b82ace3e5041bcb1d68ff09e610, type: 3}

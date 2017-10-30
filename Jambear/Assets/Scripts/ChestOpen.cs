@@ -11,13 +11,6 @@ public class ChestOpen : MonoBehaviour
 
     public string level;
 
-    [Header("UI")]
-    public Text highScore;
-    public GameObject highScoreIdiecator;
-    public Text lastScore;
-    public GameObject GameCompleteUI;
-    public Animator GameCompleteUIAnim;
-
     private AudioSource audioSo;
     public AudioClip open;
 
@@ -35,28 +28,13 @@ public class ChestOpen : MonoBehaviour
             if (collisionObject.gameObject.tag == "Player")
             {
                 chestAnim.SetTrigger("OpenChest");
-                saveNewHighScore();
-                OpenUI();
+                StartCoroutine(OpenLevel(waitTime));
             }
         }
     }
-
-    void saveNewHighScore()
+    IEnumerator OpenLevel(float time)
     {
-        //HighscoresLevelSet.AddNewHighscore(PlayerPrefs.GetString("Player Name"), scoreMan.scoreNum);
-        PlayerPrefs.SetInt("LastScore", scoreMan.scoreNum);
-        lastScore.text = "" + PlayerPrefs.GetInt("LastScore");
-        highScore.text = "" + PlayerPrefs.GetInt("HighScore");
-
-        if (scoreMan.scoreNum > PlayerPrefs.GetInt("HighScore"))
-        {
-            PlayerPrefs.SetInt("HighScore", scoreMan.scoreNum);
-            highScoreIdiecator.SetActive(true);
-        }
-    }
-    void OpenUI()
-    {
-        GameCompleteUI.SetActive(true);
-        GameCompleteUIAnim.SetBool("Activate", true);
+        yield return new WaitForSeconds(time);
+        SceneManager.LoadScene(level);
     }
 }

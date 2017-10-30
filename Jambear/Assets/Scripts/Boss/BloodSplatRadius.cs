@@ -36,8 +36,8 @@ public class BloodSplatRadius : MonoBehaviour
             }
             else if (boss.phaseID == 2)
             {
-                fireRate = Random.Range(0.5f, 0.8f);
-                Fire();
+                fireRate = Random.Range(0f, 0f);
+                //Fire();
             }
         }
         fireCounter -= Time.deltaTime * fireRate;

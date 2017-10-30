@@ -9,10 +9,13 @@ public class EnemyHealth : MonoBehaviour
 
     public SpriteRenderer enemyArt;
 
-    public GameObject coin;
+    public GameObject[] Drops;
     public GameObject gem;
 
     public int XPMin, XpMax;
+
+    public WayPoints S_wp;
+    public bool useWP;
 
     // Use this for initialization
     void Start()
@@ -38,9 +41,14 @@ public class EnemyHealth : MonoBehaviour
     }
     void Death()
     {
-        Instantiate(coin, transform.position, transform.rotation);
+        int dropNum = Random.Range(0, Drops.Length);
+        Instantiate(Drops[dropNum], transform.position, transform.rotation);
         SpawnEXP();
         Destroy(gameObject);
+        if (useWP)
+        {
+            S_wp.Death();
+        }      
     }
     void SpawnEXP()
     {
