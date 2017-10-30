@@ -1023,6 +1023,8 @@ public class PlatformerMotor2D : MonoBehaviour
                _velocity.y <= NEAR_ZERO);
     }
 
+    private PlayerController2D con;
+
     ///<summary>
     // On slope that cannot walk motor will be forced to slip down.
     ///</summary>
@@ -1230,6 +1232,7 @@ public class PlatformerMotor2D : MonoBehaviour
 
     private void Start()
     {
+        con = GetComponent<PlayerController2D>();
         shake = Camera.main.GetComponent<ShakeCamera>();
         _previousLoc = _collider2D.bounds.center;
         // initial set, do not use ChangeState
@@ -1367,6 +1370,7 @@ public class PlatformerMotor2D : MonoBehaviour
             _dashing.force))
         {
             StartDash();
+            con.Dash();
         }
 
         _dashing.pressed = false;
@@ -2051,6 +2055,7 @@ public class PlatformerMotor2D : MonoBehaviour
         if (_jumping.pressed)
         {
             bool jumped = true;
+            con.Jump();
 
             // Jump might mean different things depending on the state.
             if ((_jumping.lastValidJump == JumpState.JumpType.Normal && _jumping.jumpGraceFrames >= 0) ||

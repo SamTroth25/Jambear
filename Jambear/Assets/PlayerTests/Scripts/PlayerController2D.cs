@@ -11,6 +11,8 @@ public class PlayerController2D : MonoBehaviour
     private bool _enableOneWayPlatforms;
     private bool _oneWayPlatformsAreWalls;
 
+    public AudioClip jumpSound, dashSound;
+
     // Use this for initialization
     void Start()
     {
@@ -53,7 +55,7 @@ public class PlayerController2D : MonoBehaviour
         if (Input.GetButtonDown(PC2D.Input.JUMP))
         {
             _motor.Jump();
-            _motor.DisableRestrictedArea();
+            _motor.DisableRestrictedArea();            
         }
 
         _motor.jumpingHeld = Input.GetButton(PC2D.Input.JUMP);
@@ -117,6 +119,16 @@ public class PlayerController2D : MonoBehaviour
         if (Input.GetButtonDown(PC2D.Input.DASH))
         {
             _motor.Dash();
+            
         }
+    }
+    public void Jump()
+    {
+        //MIGHT AS WELL JUMP
+        GetComponent<AudioSource>().PlayOneShot(jumpSound, 0.7f);
+    }
+    public void Dash()
+    {
+        GetComponent<AudioSource>().PlayOneShot(dashSound, 0.7f);
     }
 }
