@@ -16,7 +16,7 @@
 			"PreviewType"="Plane"
 		}
 		ZWrite Off 
-		Lighting Off 
+		Lighting on 
 		Cull Off 
 		Fog { Mode Off } 
 		Blend One Zero
